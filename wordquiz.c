@@ -143,6 +143,10 @@ void run_test ()
 	sprintf(filepath, "wordbooks/%s", wordbook) ;
 
 	FILE * fp = fopen(filepath, "r") ;
+	if (fp == NULL) {
+        printf("Error: Could not open wordbook '%s'\n", wordbook);
+        return;
+	}
 
 	printf("\n-----\n") ;
 
@@ -150,7 +154,7 @@ void run_test ()
 	int n_correct = 0 ; 
 
 	char * line ;
-	while (line = read_a_line(fp)) {
+	while ((line = read_a_line(fp))) {
 		char * word = strtok(line, "\"") ;
 		strtok(NULL, "\"") ;
 		char * meaning = strtok(NULL, "\"") ;
@@ -160,6 +164,13 @@ void run_test ()
 
 		char answer[128] ;
 		scanf("%s", answer) ;
+
+		// Check if the user asked for a hint
+		if (strcmp(answer, "hint") == 0) {
+			printf("Hint: %c%s\n", word[0], strlen(word) > 1 ? "..." : "");
+			printf("?  ");
+			scanf("%s", answer);
+		}
 
 		if (strcmp(answer, word) == 0) {
 			printf("- correct\n") ;
