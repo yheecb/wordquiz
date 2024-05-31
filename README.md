@@ -21,16 +21,16 @@
 - To learn how to use GitHub in college classes, I am making wordquiz using only the c language. I am learning various ways to use it, such as committing, branching, and issue generation.
 ---
 # Todo List
-- 단어 추가 메뉴
-- 메뉴에서 예외처리 추가
-- 단어 수정 메뉴
-- show list 알파벳 순으로 정리 기능
-- 테스트 중 힌트 기능
-- 단계별 테스트
-- UI 추가
-- 단어 삭제 메뉴 추가
-- 테스트 랜덤 기능 추가
-- 테스트 점수제도 추가
+- Add words menu
+- Add Exception Handling from Menu
+- Word modification menu
+- show list Organizing function in alphabetical order
+- Test hint function
+- step-by-step testing
+- Add UI
+- Add word delete menu
+- Add test random functionality
+- Add a test score system
 ---
 # Tech Stack
 - C language
